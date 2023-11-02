@@ -2,9 +2,9 @@ const { Model, DataTypes} = require("sequelize");
 
 const sequelize =require('../config/connection.js');
 
-class Trips extends Model {}
+class Trip extends Model {}
 
-Traveller.init({
+Trip.init({
     id:{
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -18,14 +18,14 @@ Traveller.init({
             isDecimal: true,
         }
     },
-    traveller_amount:{
+    traveler_amount:{
         type: DataTypes.INTEGER,
         allowNull: false,   
     },
-    traveller_id:{
+    traveler_id:{
         type: DataTypes.INTEGER,
         references:{
-            model: 'traveller',
+            model: 'traveler',
             key: 'id',
         }
     },
@@ -46,4 +46,4 @@ Traveller.init({
 }
 );
 
-module.exports = Trips;
+module.exports = Trip;
